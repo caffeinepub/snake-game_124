@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: 0.09 0.012 165;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0.015 165;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.12 0.015 165;
+    --popover-foreground: 0.95 0 0;
+    --primary: 0.87 0.29 140;
+    --primary-foreground: 0.09 0.012 165;
+    --secondary: 0.18 0.015 165;
+    --secondary-foreground: 0.95 0 0;
+    --muted: 0.18 0.015 165;
+    --muted-foreground: 0.73 0 0;
+    --accent: 0.65 0.28 325;
+    --accent-foreground: 0.95 0 0;
+    --destructive: 0.65 0.28 25;
+    --destructive-foreground: 0.95 0 0;
+    --border: 0.87 0.29 140;
+    --input: 0.25 0.02 165;
+    --ring: 0.87 0.29 140;
+    --chart-1: 0.87 0.29 140;
+    --chart-2: 0.65 0.28 325;
+    --chart-3: 0.7 0.2 200;
+    --chart-4: 0.8 0.2 100;
+    --chart-5: 0.6 0.25 270;
+    --sidebar: 0.12 0.015 165;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.87 0.29 140;
+    --sidebar-primary-foreground: 0.09 0.012 165;
+    --sidebar-accent: 0.65 0.28 325;
+    --sidebar-accent-foreground: 0.95 0 0;
+    --sidebar-border: 0.87 0.29 140;
+    --sidebar-ring: 0.87 0.29 140;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Orbitron", sans-serif;
+  }
+}
+
+/* Circuit board background pattern */
+.circuit-bg {
+  background-color: oklch(0.09 0.012 165);
+  background-image: linear-gradient(
+      oklch(0.87 0.29 140 / 0.04) 1px,
+      transparent 1px
+    ), linear-gradient(90deg, oklch(0.87 0.29 140 / 0.04) 1px, transparent 1px),
+    radial-gradient(
+      circle at 20% 50%,
+      oklch(0.87 0.29 140 / 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      oklch(0.65 0.28 325 / 0.04) 0%,
+      transparent 40%
+    );
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+}
+
+/* Neon glow effects */
+.neon-green {
+  color: oklch(0.87 0.29 140);
+  text-shadow: 0 0 10px oklch(0.87 0.29 140 / 0.8), 0 0 20px
+    oklch(0.87 0.29 140 / 0.6), 0 0 40px oklch(0.87 0.29 140 / 0.4);
+}
+
+.neon-border {
+  border-color: oklch(0.87 0.29 140 / 0.6);
+  box-shadow: 0 0 8px oklch(0.87 0.29 140 / 0.3), inset 0 0 8px
+    oklch(0.87 0.29 140 / 0.05);
+}
+
+.neon-border-glow {
+  border-color: oklch(0.87 0.29 140);
+  box-shadow: 0 0 15px oklch(0.87 0.29 140 / 0.5), 0 0 30px
+    oklch(0.87 0.29 140 / 0.3), inset 0 0 15px oklch(0.87 0.29 140 / 0.05);
+}
+
+.neon-btn {
+  background: transparent;
+  color: oklch(0.87 0.29 140);
+  border: 1px solid oklch(0.87 0.29 140);
+  text-shadow: 0 0 8px oklch(0.87 0.29 140 / 0.8);
+  box-shadow: 0 0 12px oklch(0.87 0.29 140 / 0.3), inset 0 0 12px
+    oklch(0.87 0.29 140 / 0.05);
+  transition: all 0.2s ease;
+}
+
+.neon-btn:hover {
+  background: oklch(0.87 0.29 140 / 0.15);
+  box-shadow: 0 0 20px oklch(0.87 0.29 140 / 0.6), inset 0 0 20px
+    oklch(0.87 0.29 140 / 0.1);
+}
+
+.neon-btn-magenta {
+  background: transparent;
+  color: oklch(0.65 0.28 325);
+  border: 1px solid oklch(0.65 0.28 325);
+  text-shadow: 0 0 8px oklch(0.65 0.28 325 / 0.8);
+  box-shadow: 0 0 12px oklch(0.65 0.28 325 / 0.3), inset 0 0 12px
+    oklch(0.65 0.28 325 / 0.05);
+  transition: all 0.2s ease;
+}
+
+.neon-btn-magenta:hover {
+  background: oklch(0.65 0.28 325 / 0.15);
+  box-shadow: 0 0 20px oklch(0.65 0.28 325 / 0.6), inset 0 0 20px
+    oklch(0.65 0.28 325 / 0.1);
+}
+
+.key-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid oklch(0.87 0.29 140 / 0.5);
+  border-radius: 4px;
+  color: oklch(0.87 0.29 140);
+  font-size: 12px;
+  font-weight: 700;
+  background: oklch(0.12 0.015 165);
+  box-shadow: 0 2px 0 oklch(0.87 0.29 140 / 0.3), 0 0 6px
+    oklch(0.87 0.29 140 / 0.2);
+}
